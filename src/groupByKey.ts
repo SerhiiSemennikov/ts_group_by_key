@@ -7,8 +7,8 @@ type GroupsMap<T> = {
 export function groupByKey<T>(arrayOfObjects: T[], key: keyof T): GroupsMap<T> {
   const newArrayOfObjects: GroupsMap<T> = {};
 
-  arrayOfObjects.map((objectInArray) => {
-    const keyValue = String(objectInArray[key]);
+  arrayOfObjects.forEach((objectInArray) => {
+    const keyValue = objectInArray[key];
 
     if (!newArrayOfObjects[keyValue]) {
       newArrayOfObjects[keyValue] = [];
